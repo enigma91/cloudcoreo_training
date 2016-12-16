@@ -18,7 +18,7 @@ coreo_aws_advisor_alert "ec2-training-check" do
   service :ec2
   #include_violations_in_count false
   display_name "Ec2 large not encrypted snapshots"
-  description "EC2 not encrypted snapshot is greater than 256GB"
+  description "EC2 not encrypted snapshot is greater than 8GB"
   category "Inventory"
   suggested_action "None."
   level "Informational"
