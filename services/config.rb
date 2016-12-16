@@ -14,8 +14,8 @@ coreo_aws_advisor_alert "elb-training-check" do
 end
 
 coreo_aws_advisor_elb "advise-elb" do
-  alerts ["elb-training-check"]
   action :advise
+  alerts ["elb-training-check"]
   regions ${AUDIT_AWS_ELB_REGIONS}
 end
 
