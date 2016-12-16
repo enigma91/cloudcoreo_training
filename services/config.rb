@@ -24,7 +24,7 @@ coreo_aws_advisor_alert "ec2-training-check" do
   level "Informational"
   objectives ["snapshots"]
   audit_objects ["snapshot_set.volume_size", "snapshot_set.encrypted"]
-  operators [">", "="]
+  operators [">", "=="]
   alert_when [8, false]
 end
 
