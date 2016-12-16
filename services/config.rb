@@ -22,7 +22,6 @@ end
 coreo_aws_advisor_alert "ec2-training-check" do
   action :define
   service :ec2
-  #include_violations_in_count false
   display_name "Ec2 large not encrypted snapshots"
   description "EC2 not encrypted snapshot is greater than 8GB"
   category "Inventory"
@@ -35,7 +34,7 @@ coreo_aws_advisor_alert "ec2-training-check" do
 end
 
 coreo_aws_advisor_ec2 "advise-ec2" do
-  alerts ["ec2-training-check"]
   action :advise
+  alerts ["ec2-training-check"]
   regions ${AUDIT_AWS_ELB_REGIONS}
 end
