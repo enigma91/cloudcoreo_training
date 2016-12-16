@@ -12,3 +12,9 @@ coreo_aws_advisor_alert "elb-inventory" do
   operators [">"]
   alert_when [1]
 end
+
+coreo_aws_advisor_elb "advise-elb" do
+  alerts ${AUDIT_AWS_ELB_ALERT_LIST}
+  action :advise
+  regions ${AUDIT_AWS_ELB_REGIONS}
+end
