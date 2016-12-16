@@ -1,1 +1,6 @@
 variables:
+    NEW_PARAM4:
+        required: false
+        description: fake var
+        type: string
+        default:
