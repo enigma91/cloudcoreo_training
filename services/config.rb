@@ -22,7 +22,7 @@ coreo_aws_advisor_alert "ec2-training-check" do
   category "Inventory"
   suggested_action "None."
   level "Informational"
-  objectives ["snapshots"]
+  objectives ["snapshots", "snapshots"]
   audit_objects ["snapshot_set.volume_size", "snapshot_set.encrypted"]
   operators [">", "=="]
   alert_when [8, false]
