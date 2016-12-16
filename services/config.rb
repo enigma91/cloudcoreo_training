@@ -28,10 +28,10 @@ coreo_aws_advisor_alert "ec2-training-check" do
   suggested_action "None."
   level "Informational"
   id_map "snapshot_set.snapshot_id"
-  objectives ["snapshots", "snapshots"]
-  audit_objects ["snapshot_set.volume_size", "snapshot_set.encrypted"]
-  operators [">", "=="]
-  alert_when [8, false]
+  objectives ["snapshots"]
+  audit_objects ["snapshot_set.volume_size"]
+  operators [">"]
+  alert_when [8]
 end
 
 coreo_aws_advisor_ec2 "advise-ec2" do
