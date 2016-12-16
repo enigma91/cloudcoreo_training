@@ -13,6 +13,12 @@ coreo_aws_advisor_alert "elb-training-check" do
   alert_when [1]
 end
 
+coreo_aws_advisor_elb "advise-elb" do
+  alerts ["elb-training-check"]
+  action :advise
+  regions ${AUDIT_AWS_ELB_REGIONS}
+end
+
 coreo_aws_advisor_alert "ec2-training-check" do
   action :define
   service :ec2
@@ -28,8 +34,8 @@ coreo_aws_advisor_alert "ec2-training-check" do
   alert_when [8, false]
 end
 
-coreo_aws_advisor_elb "advise-elb" do
-  alerts ["elb-training-check", "ec2-training-check"]
+coreo_aws_advisor_ec2 "advise-ec2" do
+  alerts ["ec2-training-check"]
   action :advise
   regions ${AUDIT_AWS_ELB_REGIONS}
 end
