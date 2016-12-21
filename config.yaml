@@ -5,8 +5,3 @@ variables:
          type: array
          default:
           - us-east-1
-    TEST:
-         description: "List of AWS regions to check. Default is us-east-1,us-west-1,us-west-2,eu-west-1."
-         required: true
-         type: string
-         default:
